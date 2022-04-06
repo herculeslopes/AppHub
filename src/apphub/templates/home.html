@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>You're in The Home Page</h1>
+    <div class="app-boxes-wrapper">
+        {% for box in box_list %}
+            <div class="app-box-wrapper">
+                <div class="app-box-image-wrapper">
+                    <img class="app-box-image" src="{% static 'img/discord.png' %}" alt="">
+                </div>
+                <div class="app-box-data-wrapper">
+                    <table class="app-box-data">
+                        <tr>
+                            <td>Name</td>
+                        </tr>
+                        <tr>
+                            <td>Discord </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        {% endfor %}  
+    </div>
+{% endblock content %}

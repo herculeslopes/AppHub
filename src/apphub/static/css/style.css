@@ -1,0 +1,39 @@
+* {
+    border: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #dbdbdb;
+}
+
+.app-boxes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #bcbcbc;
+}
+
+.app-box-wrapper {
+    /* width: 20%; */
+    width: 400px;
+    height: 300px;
+    background-color: #808080;
+    border-radius: 30px;
+    padding: 10px;
+    /* float: left; */
+    /* flex: 1; */
+    flex-grow: 0;
+    margin: 10px auto;
+}
+
+.app-box-image-wrapper {
+    width: 100px;
+    height: 100px;
+}
+
+.app-box-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
