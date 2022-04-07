@@ -21,10 +21,9 @@ body {
     background-color: #808080;
     border-radius: 30px;
     padding: 10px;
-    /* float: left; */
     /* flex: 1; */
     flex-grow: 0;
-    margin: 10px auto;
+    margin: 30px auto;
 }
 
 .app-box-image-wrapper {
