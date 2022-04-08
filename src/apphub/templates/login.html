@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block base_style %}
+    <link rel="stylesheet" href="{% static 'css/login_style.css' %}">
+{% endblock base_style %}
+
+{% block base_html %}
+    <div class="login-form-container">
+        <div class="login-header-wrapper">
+            <h1 class="login-header">Login</h1>
+        </div>
+        <form action="." method="POST" class="login-form"> {% csrf_token %}
+            <table class="login-form-table">
+                <tr>
+                    <td>
+                        <label for="username-input" class="login-form-label">Username</label>
+                    </td>
+                    <td>
+                        <input type="text" name="username-input" class="login-form-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password-input" class="login-form-label">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="password-input" class="login-form-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="login-form-submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock base_html %}

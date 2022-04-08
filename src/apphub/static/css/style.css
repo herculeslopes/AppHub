@@ -5,6 +5,7 @@
 
 body {
     background-color: #dbdbdb;
+    font-family: Arial;
 }
 
 .app-boxes-wrapper {
@@ -35,4 +36,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.app-box-data-wrapper {
+    width: 30px;
+    background-color: #242424;
 }

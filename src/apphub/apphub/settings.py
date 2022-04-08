@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # own
     'pages',
+    'users',
     'softwares',
 
     # third party
