@@ -30,11 +30,16 @@
 }
 
 .login-form-submit {
-    background-color: #808080;
+    background-color: #5c5c5c;
     color: #ececec;
     padding: 10px;
     border-radius: 10px;
 }
+
+.login-form-submit:hover {
+    background-color: #7b7b7b;
+}
+
 
 .login-form td {
     padding-bottom: 10px;

@@ -22,9 +22,9 @@ from users import views as users_views
 
 urlpatterns = [
     path('', pages_views.home_view, name='home'),
-    path('home/', pages_views.home_view, name='home'),
+    path('home/', pages_views.home_view, name='pages_home'),
     # path('login/', pages_views.login_view, name='login'),
-    path('login/', users_views.user_login_view, name='login'),
-    path('signup/', users_views.user_signup_view, name='signup'),
+    path('login/', users_views.user_login_view, name='user_login'),
+    path('signup/', users_views.user_signup_view, name='user_signup'),
     path('admin/', admin.site.urls),
 ]
