@@ -12,19 +12,7 @@
 </head>
 <body>
     <header class="base-header">
-        <nav>
-            <ul>
-                <li>
-                    <a href="../home">Home</a>
-                </li>
-                <li>
-                    <a href="../login">Login</a>
-                </li>
-                <li>
-                    <a href="../signup">Signup</a>
-                </li>
-            </ul>
-        </nav>
+        {% include 'nav.html' %}
     </header>
     {% block base_html %}
     {% endblock base_html %}

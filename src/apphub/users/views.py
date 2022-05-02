@@ -88,7 +88,8 @@ def user_login_view(request, *args, **kwargs):
     # else:
 
     context = {
-        'form': login_form
+        'form': login_form,
+        'user': None,
     }
 
     return render(request, "users/user_login.html", context)
@@ -104,14 +105,26 @@ def user_signup_view(request, *args, **kwargs):
             'password': signup_form.cleaned_data['password'],
         }
         
-        User.objects.create(**signup_data)
+        current_user = User.objects.create(**signup_data)
+        cache.set('user', current_user)
 
+        message = 'Signup Completed'
+
+        return redirect('pages_home')
 
     else:
+        message = 'Error on Signup'
         print(signup_form.errors)
 
     context = {
-        'form': signup_form
+        'form': signup_form,
+        'message': message,
+        'user': None,
     }
 
     return render(request, "users/user_signup.html", context)
+
+
+def user_logout_view(request, *args, **kwargs):
+    cache.delete('user')
+    return redirect('user_login')

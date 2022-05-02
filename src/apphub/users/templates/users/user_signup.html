@@ -6,6 +6,9 @@
 {% endblock head_tags %}
 
 {% block base_html %}
+    <h1>
+        {{ message }}
+    </h1>
     <div class="signup-form-container">
         <div class="signup-header-wrapper">
             <h1 class="signup-header">Signup</h1>
@@ -52,4 +55,9 @@
             </table>
         </form>
     </div>
+    <script>
+        if ({{ message }} == "Error on Signup") {
+            alert('Username or email already in User');
+        }
+    </script>
 {% endblock base_html %}

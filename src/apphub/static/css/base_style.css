@@ -38,16 +38,65 @@ body {
 }
 
 
+/* Base Form */
+.form-container {
+    background-color: #a8a8a8;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+}
 
-/* <header class="base-header">
-<nav class="base-header-nav">
-    <ul class="base-header-nav-ul">
-        <li class="base-header-nav-ul-li">
-            <a href="../login">Login</a>
-        </li>
-        <li class="base-header-nav-ul-li">
-            <a href="../signup">Signup</a>
-        </li>
-    </ul>
-</nav>
-</header> */
+.form-header-wrapper {
+    text-align: center;
+}
+
+.form-header {
+    color: #121212;
+}
+
+.form-label {
+    color: #121212;
+    font-size: 14pt;
+}
+
+.form-input {
+    background-color: #808080;
+    color: #ececec;
+    font-size: 14pt;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.form-input::placeholder {
+    color: #9f9f9f;
+}
+
+.form-textarea {
+    background-color: #808080;
+    color: #ececec;
+    font-size: 14pt;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.form-submit {
+    background-color: #5c5c5c;
+    color: #ececec;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.form-submit:hover {
+    background-color: #7b7b7b;
+}
+
+td {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    vertical-align: top;
+}

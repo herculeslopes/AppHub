@@ -1,0 +1,25 @@
+html, body {
+    background-color: #dbdbdb;
+    height: 100%;
+}
+
+h1, h2 {
+    font-family: Arial;
+    text-align: center;
+}
+
+div {
+    height: 100%;
+    margin: 50px;
+}
+.outermost-div {
+    background-color: #a8a8a8;
+}
+
+.outermost-header {
+    color: #121212;
+}
+
+.inner-div-1 {
+    background-color: #808080;
+}

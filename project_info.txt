@@ -1,3 +1,7 @@
 django superuser
 username: hercules
 password: 1234
+
+commands:
+manage.py migrate --run-syncdb
+

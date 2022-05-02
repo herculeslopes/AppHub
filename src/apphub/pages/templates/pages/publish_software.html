@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_tags %}
+    <link rel="stylesheet" href="{% static 'css/publish_style.css' %}">
+{% endblock head_tags %}
+
+{% block base_html %}
+    <h1 style="text-align: center">Sofware Page</h1>
+
+    {% include 'softwares/publish_form.html' %}
+{% endblock base_html %}

@@ -16,15 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from pages import views as pages_views
+from pages import views as page_views
 
-from users import views as users_views
+from users import views as user_views
+from softwares import views as software_views
 
 urlpatterns = [
-    path('', pages_views.home_view, name='home'),
-    path('home/', pages_views.home_view, name='pages_home'),
-    # path('login/', pages_views.login_view, name='login'),
-    path('login/', users_views.user_login_view, name='user_login'),
-    path('signup/', users_views.user_signup_view, name='user_signup'),
+    path('', page_views.home_page_view, name='home'),
+    path('home/', page_views.home_page_view, name='pages_home'),
+    path('publish-software/', software_views.publish_software_view, name='publish_software'),
+    # path('login/', page_views.login_view, name='login'),
+    path('login/', user_views.user_login_view, name='user_login'),
+    path('signup/', user_views.user_signup_view, name='user_signup'),
+    path('logout/', user_views.user_logout_view, name='user_logout'),
+    path('test/', page_views.test_page_view, name='test_page'),
     path('admin/', admin.site.urls),
 ]
