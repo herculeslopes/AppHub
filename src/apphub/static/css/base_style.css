@@ -4,9 +4,11 @@
     border: 0;
 }
 
-body {
+html, body {
     background-color: #dbdbdb;
     font-family: Arial;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* .base-header {
@@ -89,6 +91,10 @@ body {
     color: #ececec;
     padding: 10px;
     border-radius: 10px;
+}
+
+.form-multiselect {
+    
 }
 
 .form-submit:hover {

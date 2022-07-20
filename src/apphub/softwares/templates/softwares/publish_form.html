@@ -2,7 +2,7 @@
     <div class="form-header-wrapper">
         <h1 class="form-header">Publish Your Software</h1>
     </div>
-    <form action="." method="POST" class="publish-form">
+    <form action="." method="POST" class="publish-form"> {% csrf_token %}
         <table class="form-table publish-form-table">
             <tr>
                 <td>
@@ -14,10 +14,34 @@
             </tr>
             <tr>
                 <td>
-                    <label for="{{ form.description.id_for_label }}" class="publish-form-label">Description:</label>
+                    <label for="{{ form.version.idd_for_label }}" class="form-label publish-form-label">Version:</label>
+                </td>
+                <td>
+                    {{ form.version }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="{{ form.description.id_for_label }}" class="form-label publish-form-label">Description:</label>
                 </td>
                 <td>
                     {{ form.description }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="{{ form.project_url.id_for_label }}" class="form-label publish-form-label">Project URL:</label>
+                </td>
+                <td>
+                    {{ form.project_url }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="{{ form.platforms.id_for_label }}" class="form-label publish-form-label">Platforms:</label>
+                </td>
+                <td>
+                    {{ form.platforms }}
                 </td>
             </tr>
             <tr>

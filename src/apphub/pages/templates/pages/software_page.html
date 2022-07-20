@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_tags %}
+    <link rel="stylesheet" href="{% static 'page_style.css' %}">
+{% endblock head_tags %}
+
+{% block base_html %}
+    <div class="software-page-container">
+        <div class="software-details-wrapper">
+            <div class="software-details">
+                <h1 class="software-name">{{ software.name }}</h1>
+                <span class="software-details-label">By:</span>
+                <span class="software-details-value">{{ software.publisher }}</span>
+                <br>
+                <span class="software-version">Version: {{ software.version }}</span>
+                <br>
+                <span class="software-details-label">Description:</span>
+                <p class="software-description">{{ software.description }}</p>
+                <span class="software-details-label">Supported Platforms:</span>
+                <ul class="software-details-list">
+                    {% for platform in software.platforms.all %}
+                        <li>{{ platform }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="comment-section-wrapper">
+            <div class="comment-section">
+                <h2>Comments</h2>
+                {% if not software.comments.all %}
+                    <h3>No comments yet...</h3>
+                {% else %}
+                    {% for comment in software.comments.all %}
+                    <div class="comment-wrapper">
+                        <span class="comment-section-label">User {{ comment.user }}</span>
+                        <p class="comment-body">
+                        {{ comment.body }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock base_html %}
+

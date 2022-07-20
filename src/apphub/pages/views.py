@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from django.core.cache import cache
+from django.contrib.auth.decorators import login_required
 
+from softwares.models import Software
 # Create your views here.
 # def home_view(request, *args, **kwargs):
 #     # return HttpResponse("<h1>Hello World</h1>")
@@ -13,15 +14,31 @@ from django.core.cache import cache
 #     return redirect('user_login')
 
 
+@login_required(login_url='/auth/login/')
 def home_page_view(request, *args, **kwargs):
-    current_user = cache.get('user')
-    context = {}
-    if current_user != None:
-        context['user'] = 1
-        return render(request, 'pages/home.html', context)
+    if request.method == 'GET':
+        all_softwares = Software.objects.all()
 
-    return redirect('user_login')
+        context = {
+            'softwares': all_softwares
+        }
 
+        print('not searched')
+
+    else:
+        searched = request.POST['search-input']
+        softwares = Software.objects.filter(name__contains=searched)
+
+        context = {
+            'searched': searched,
+            'softwares': softwares,
+        }
+
+        print('searched')
+
+
+    return render(request, 'pages/home.html', context)
+    
 
 def test_page_view(request, *args, **kwargs):
     return render(request, 'test.html', {})

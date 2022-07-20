@@ -1,0 +1,57 @@
+[
+    {
+        "model": "softwares.Comment",
+        "pk": 1,
+        "fields": {
+            "software": 1,
+            "user": 1,
+            "body": "Nice work, User1, keep it up.",
+            "date_created": "2022-07-20",
+            "date_updated": "2022-07-20"
+        }
+    },
+    {
+        "model": "softwares.Comment",
+        "pk": 2,
+        "fields": {
+            "software": 1,
+            "user": 1,
+            "body": "Nice work, User1, keep it up.",
+            "date_created": "2022-07-20",
+            "date_updated": "2022-07-20"
+        }
+    },
+    {
+        "model": "softwares.Comment",
+        "pk": 3,
+        "fields": {
+            "software": 1,
+            "user": 1,
+            "body": "Nice work, User1, keep it up.",
+            "date_created": "2022-07-20",
+            "date_updated": "2022-07-20"
+        }
+    },
+    {
+        "model": "softwares.Comment",
+        "pk": 4,
+        "fields": {
+            "software": 1,
+            "user": 1,
+            "body": "Nice work, User1, keep it up.",
+            "date_created": "2022-07-20",
+            "date_updated": "2022-07-20"
+        }
+    },
+    {
+        "model": "softwares.Comment",
+        "pk": 5,
+        "fields": {
+            "software": 1,
+            "user": 1,
+            "body": "Nice work, User1, keep it up.",
+            "date_created": "2022-07-20",
+            "date_updated": "2022-07-20"
+        }
+    }
+]

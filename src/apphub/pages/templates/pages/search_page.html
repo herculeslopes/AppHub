@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_tags %}
+    <link rel="stylesheet" href="{% static 'card_style.css' %}">
+{% endblock head_tags %}
+
+{% block base_html %}
+
+    <form action="{% url 'search_view' %}" method="POST" class="search-box-form"> {% csrf_token %}
+        <input type="text" class="search-input" name="search-input">
+        <input type="submit" class="search-submit">
+    </form>
+
+    <div class="software-cards-container">
+        {% for software in softwares %}
+            <div class="software-card-wrapper" id="{{ software.software_id }}">
+                <div class="software-card">
+                    <h3 class="software-name">{{ software.name }}</h3>
+                    <p class="software-description">{{ software.description|truncatechars:100 }}</p>
+                    <span class="software version">Version: {{ software.version }}</span>
+                    <span class="publisher-name">By: {{ software.publisher_id }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script src="{% static 'js/home.js' %}"></script>
+    
+
+{% endblock base_html %}

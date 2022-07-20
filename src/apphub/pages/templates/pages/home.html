@@ -1,10 +1,45 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head_tags %}
+    <link rel="stylesheet" href="{% static 'card_style.css' %}">
+{% endblock head_tags %}
 
 {% block base_html %}
+    <h1>User: {{user.username}}</h1>
     <h1>This is still Home</h1>
     <h3>Choose</h3>
     <a href="../publish-software">Publish Software</a>
+
+    <form action="." method="POST" class="search-box-form"> {% csrf_token %}
+        <input type="text" class="search-input" name="search-input">
+        {% comment %} <input type="button" value="X" name="clear-button"> {% endcomment %}
+        <input type="submit" class="search-submit">
+    </form>
+
+    <div class="software-cards-container">
+        {% if softwares.count == 0 %}
+            <h3>No results from you search.</h3>
+        {% else %}
+            {% if searched %}
+                <h3>You have searched for: {{ searched }}</h3>
+            {% endif %}
+                {% for software in softwares %}
+                <div class="software-card-wrapper" id="{{ software.software_id }}">
+                    <div class="software-card">
+                        <h3 class="software-name">{{ software.name }}</h3>
+                        <p class="software-description">{{ software.description|truncatechars:100 }}</p>
+                        <span class="software version">Version: {{ software.version }}</span>
+                        <span class="publisher-name">By: {{ software.publisher_id }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        
+    </div>
+
+    <script src="{% static 'js/home.js' %}"></script>
+    
 
 {% endblock base_html %}

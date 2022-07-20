@@ -1,0 +1,23 @@
+[
+    {
+        "model": "softwares.Platform",
+        "pk": 1,
+        "fields": {
+            "name": "Windows"
+        }
+    },
+    {
+        "model": "softwares.Platform",
+        "pk": 2,
+        "fields": {
+            "name": "Mac OS"
+        }
+    },
+    {
+        "model": "softwares.Platform",
+        "pk": 3,
+        "fields": {
+            "name": "Linux"
+        }
+    }
+]

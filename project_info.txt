@@ -1,7 +1,10 @@
++ manage.py create superuser
 django superuser
 username: hercules
 password: 1234
 
 commands:
-manage.py migrate --run-syncdb
+manage.py make migrations
+manage.py migrate
+manage.py migrate --run-syncdb (in case none of the above are working)
 
